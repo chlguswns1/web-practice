@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>객체(Object)</title>
+
+<script type="text/javascript">
+/*1. 객체의 생성 - (키:요소)로 객체를 관리하게 된다 
+	var product = { name:'냉장고',제조사:'한국'} //객체를 생성하는 형태
+
+	alert(product.name);
+	alert(product['제조사']);
+	*/
+/* 2. 객체의 속성과 메서드
+//	-속성 : 객체 내부에 있는 하나하나의 값
+//	-객체의 속성이 가질수 있는 자료형
+
+	var object = {
+			userNuber:273,
+			useString:'문자열',
+			useBoolean:true,
+			userArray:[52,273,103,32],
+			//메서드:객체의 속성 중 함수 자료형인 속성
+			method:function(){}
+		};
+// -  속성과 메서드의 구분
+//		.변수를 선언
+	var person = {
+		
+		name:'홍길동',
+		eat:function(food){alert('음식: ' +food);}
+		};
+		alert(person.name);//속성 접근 방법 
+		person.eat();//객체에 대한 메서드 호출방법
+
+	
+// - this 키워드 : 자바스크립트는 this 키워드를 생략할수 없다.
+	var person = {
+		name:'홍길동',
+		eat:function(food){
+			alert(this.name+'이'+food+'을 먹었습니다');
+		}
+	};
+	person.eat('밥');
+*/
+
+/* 3.객체와 반복문 
+	var product = {
+		name:'Eclips & tomcat',
+		price:'free',
+		language:'한국어',
+		supportOS:'win32/64',
+		subscription:true
+		};
+		
+	var output = '';
+	for(var key in product){
+		output += '* '+ key + ' : '+ product[key] + '\n';
+	}
+	alert(output);
+*/
+
+/* 4.객체와 관련된 키워드 
+	var student = {
+	name:'홍길동',
+	kor:92,math:98,eng:96,sci:98
+};
+
+//-in 키워드 : 해당키가 객체안에 있는지 확인 in
+	var output = '';
+	output += "'name'+ in student: " + ('name' in student) +'\n';//true
+	output += "'age' in student: " +('age' in student);//false
+	
+	alert(output);
+	
+// -with 키워드: 복잡하게 사용해야 하는 코드를 짧게 줄여주는 키워드
+//  .with 키워드를 사용하지 않을 경우
+	var student = {
+		name:'홍길동',
+		kor:92,math:98,eng:96,sci:98
+};
+
+	var output = '';
+		output += "'name'+ in student: " + ('name' in student) +'\n';
+		output += "'age' in student: " +('age' in student);
+	alert(output);
+	
+	var wirte = '';
+	wirte += 'name :' + student.name +'\n';
+	wirte += '국어 :' + student.kor +'\n';
+	wirte += '수학 :' + student.math +'\n';
+	wirte += '영어 :' + student.eng +'\n';
+	wirte += '과학 :' + student.sci +'\n';
+	
+	alert(wirte);
+	
+	
+// -with 키워드를 사용한경우: 위와 동일하게 결과데이터를 출력해주고 있다
+	var wirte = '';
+	with(student){
+	wirte += 'name :' + student.name +'\n';
+	wirte += '국어 :' + student.kor +'\n';
+	wirte += '수학 :' + student.math +'\n';
+	wirte += '영어 :' + student.eng +'\n';
+	wirte += '과학 :' + student.sci +'\n';
+	}
+	alert(wirte);
+*/
+
+
+/* 5. 객체의 속성 추가와 제거 
+// - 동적 속성 추가/제거: 처음 객처를 생성하는 시점이후에 객체의
+// 						  속성을 추가하거나 제거하는 것.
+
+	//. 빈 객체를 생성
+	var student = {
+	이름:'홍길동',
+	취미:'악기'
+	//특기 : '프로그래밍';
+	//장래희망 = '훌륭한 프로그래밍';
+	};
+	
+	//. 동적으로 속성을 추가 - 위와같이 선언한거와 같다
+	//student.이름 = '홍길동';
+	//student.취미 = '악기';
+	student.특기 = '프로그래밍';
+	student.장래희망 = '훌륭한 프로그래밍';
+	
+	//. 동적으로 메서드 추가
+	student.toString = function(){
+		var output = '';
+		for(var key in this){
+			if(key != 'toString'){
+				output += key + ' : ' + this[key] + '\n'; 
+			}
+		}
+		return output;
+	}
+	//alert(student.toString());
+	alert(student);//toString을 호출하지 않아도 정상적으로 잘된다
+	//syso는 참조변수가 입력되면 내부에서toString을 메서드를 호출하게끔 기능되어 있었고 자바의 그기능과 같다
+	
+	
+	//.객체의 속성 제거
+	delete(student.장래희망);
+	alert(student);
+	*/	
+/* 6. 생성자 함수 
+// - new 키워드를 사용해 객체를 생성할수 있는 함수.
+// - 생성자 함수를 사용한 객체의 생성과 출력.
+// - 그냥 함수를 사용해 객체를 리턴하는 방법과 차이가 없어 보임.
+
+	function Student(name,korean,math,englich,science){//정의방법은 선언적함수와 동일하다,그래서 선언적함수다 생성자함수다 구분짖기위해 선언적은 소문자
+		//속성										   // 생성자는 대문자로 구분되어지게 정의하도록 제안하고 있다
+		this.이름 = name;
+		this.국어 = korean;
+		this.수학 = math;
+		this.영어 = englich;
+		this.과학 = science;
+		
+		//메서드 총합
+		this.getSum = function(){
+			return this.국어+this.수학+this.영어+this.과학;
+		};
+		//평균
+		this.getAverage = function() {
+			return this.getSum() /4;
+		}
+		this.toString = function() {
+			return this.이름 +':'+this.getSum()+','+this.getAverage();
+			}
+	}
+	var students = [];
+	students.push(new Student('홍길동',87 ,98 ,88 ,95)); //라는 메서드를통해서 저장할수 있다
+	students.push(new Student('홍길서',44 ,94 ,84 ,85)); 
+	students.push(new Student('홍동',55 ,88 ,78 ,15)); 
+	students.push(new Student('길동',47 ,38 ,28 ,15)); 
+	students.push(new Student('홍ㅇㅇ길동',47 ,88 ,98 ,65)); 
+	
+	var output = '이름       총점 		평규\n';
+	output +='---------------------------------\n';
+	
+	for(var i in students){
+		output += students[i].toString()+'\n'
+	}
+	alert(output);
+*/
+
+/* 7.프로토타입(prototype) 
+//	-생성자 함수를 사용해 생성된 객체가 공통으로 가지는 공간.
+//	-자바 스크립트의 모든함수는 변수 prototype 을 가지고 있고 이prototypedms
+//	-객체다
+
+	function Student(name,korean,math,englich,science){
+		//속성
+
+		this.이름 = name;
+		this.국어 = korean;
+		this.수학 = math;
+		this.영어 = englich;
+		this.과학 = science;
+}
+	Student.prototype.getSum = function() {
+		return this.국어+this.수학+this.영어+this.과학;
+	}
+	this.getAverage = function() {
+		return this.getSum() /4;
+	}
+	this.toString = function() {
+		return this.이름 +':'+this.getSum()+','+this.getAverage();
+	}
+	var students = [];
+	students.push(new Student('홍길동',87 ,98 ,88 ,95)); //라는 메서드를통해서 저장할수 있다
+	students.push(new Student('홍길서',44 ,94 ,84 ,85)); 
+	students.push(new Student('홍동',55 ,88 ,78 ,15)); 
+	students.push(new Student('길동',47 ,38 ,28 ,15)); 
+	students.push(new Student('홍ㅇㅇ길동',47 ,88 ,98 ,65)); 
+	
+	var output = '이름       총점 		평규\n';
+	output +='---------------------------------\n';
+	
+	for(var i in students){
+		output += students[i].toString()+'\n'
+	}
+	alert(output);
+*/
+
+/* 8.instanceof 키워드
+// 	- 인스턴스: 생성자 함수를통해 new 라고하는 키워드를 통해서 만들어진 객체를 인스턴스다 라고한다
+//	- 해당 객체가 어떠한 생성자 함수를 통해 생성됐는지를 확인할
+// 	  때 사용하는 키워드
+
+	//생성자 함수를 선언
+	function Student(name) {this.name = name;}
+	
+	var student = new Student('홍길동');
+	
+	alert(student instanceof Number);//false 넌Number생성자 함수로 만드러진 인스턴스냐 라고 물어보는 키워드이다
+	alert(student instanceof Student);//true 넌Student생성자 함수로 만드러진 인스턴스냐 라고 물어보는 키워드이다
+	*/
+	
+/* 9.상속 */
+function Rectangle(w,h) {
+	var width = w;
+	var height = h;
+	
+	this.getWidth = function name() {return width;}
+	this.getHeight = function name() {return height;}
+	
+	this.setWitdth = function name() {
+		if(value < 0){
+			throw'길이는 음수일 수 없습니다';
+		}else{
+			width = value;
+		}
+	}
+}
+ 
+ 
+</script>
+</head>
+<body>
+
+</body>
+</html>

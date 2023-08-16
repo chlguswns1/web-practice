@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>브라우저 객체 모델</title>
+<script type="text/javascript">
+// * 브라우저 객체 모델(BOM:Browser Object Model)
+//  - 웹브라우저와 관련된 객체의 집합을 의미.
+//  - window, screen, location, navigator, history, document 객체가 있다.
+
+/* 1. window 객체 */ //브라우저를 관리하는 최상위 부모객체
+// - 브라우저 기반 자바스크립트의 최상위 객체. 
+// - alert(), prompt() 함수 모두 window 객체의 메서드.
+	
+	//. window 객체의 원도우 생성 메소드 - 브라우저 창을 뛰울때
+	//window.open('https://www.naver.com','child','width=1024,height=1200');
+
+/* 	var output ='';//window객체보기
+	for(var key in window){
+		output += '* '+key+ ' : ' +window[key]+'\n';
+	}
+	alert(output);
+	 
+	//===========================
+		
+		var child = window.open('','width=300','height=200','menubar=yes','status=yes','toolbar=yes');
+	 
+	 	child.moveTo(0,0);//0,0으로 이동해가라
+	 	
+	 	setInterval(function(){//일정주기별로 처리하고 싶을떄
+	 		child.moveBy(10,10);//현재의 위치에서  우측과 아래로 10 10픽셀만큼이동해라
+	 	},1000);//얼마만큼의 시간동안 동적효과를 실행할거냐
+	 	
+	 	*/
+/* 2. screen 객체
+// - 웹브라우저의 화면이 아니라 운영체제 화면의 속성을 가지는 객체.
+
+	window.open('https://www.naver.com','child','width=600,height=300');//child로 창의 이름을 관리하게다
+	
+	var output ='';//screen객체 와 메서드보기
+	for(var key in screen){
+		output += '* '+key+ ' : ' +screen[key]+'\n';
+	}
+	alert(output);
+
+	//=====================
+	// - 브라우저의 크기를 화면에 일치는 방법
+	//	.팝업창을 생성하고 전체화면을 만들어주고 이어 1초마다 크기
+	//	변환하고 이동햐점점 가운대로 수렴
+	var child = window.child('','','width=600,height=300');
+	
+	var width = screen.width;
+	var height = screen.height;
+	
+	child.moveTo(0,0);//To이 붙으면 절대적
+	child.resizeTo(width,height);
+	
+	setInterval(function() {
+		child.resizeBy(-20,-20)//By현재위치로부터 상대적
+		child.moveBy(10,10);
+	},2000);
+
+	*/	
+	
+/* 3. location 객체 
+// - 브라우저의 주소 표시줄과 관련된 객체.
+// - 프로토콜의 종류, 호스트 이름, 문서 위치등의 정보를 가짐.
+// - 페이지를 이동할 때 많이 사용.
+	var output = '';
+	for(var key in location){
+		output += '※ '+key+':'+location[key]+'\n';
+	}
+	alert(output);
+	
+	 //=========================================
+	 // - 페이지 이동방법 4가지
+	 //뒤로가기 버튼을 사용할수 없음 - check
+	 
+	 //1번째 로케이션 객체에 다이렉트로
+	 location = 'https://www.naver.com';
+	 //2번째 방법 .herf
+	 location.herf = 'https://www.naver.com';
+	 //3번째
+	 location.assign('https://www.daum.net');
+	 //4번째 
+	 location.replace('https://www.daum.net');
+	 
+	 //=========================================
+	 // - 현재 페이지 새로고침 - 이런코드를 만나면 새로고침을 실행하게 된다
+	 location = location;
+	 location.herf = location.herf;
+	 
+	 location.assign(location)
+	 location.replace(location)
+	 
+	 location.reload();
+ */	 
+/* 4. navigator 객체 
+// - 웹페이지를 실행하고 있는 브라우저에 대한 정보를 가짐.
+	var output = '';
+	for(var key in navigator){
+		output += '※ '+key+':'+navigator[key]+'\n';
+	}
+	
+	alert(output);
+
+*/
+/* 5. window 객체의 onload 이벤트 속성 */
+// - window 객체가 로드가 완료되고 자동으로 할당된 함수를 실행.
+	
+	
+	window.onload = function () {
+	alert('hello javaScript onload event!');//<body>부분 출력후 출력되지만 성능에따라 다르다 
+};
+
+</script>
+</head>
+<body>
+
+	<h1>Hello Window...!!!</h1>
+	<h1>Hello Window...!!!</h1>
+	
+</body>
+</html>

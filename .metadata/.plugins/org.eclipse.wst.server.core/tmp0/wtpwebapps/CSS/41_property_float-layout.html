@@ -1,0 +1,63 @@
+﻿<!--
+	* float 속성 - layout 활용
+		. 자손에 float 속성을 적용하면 부모의 overflow 속성에 hidden 키워드를 적용한다.
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>float 속성 - layout 활용</title>
+
+<style type="text/css">
+
+body {
+	width: 1280px;
+	margin: 0 auto;/* 바디영역에 위아래 여백0 좌우 자동할당(가운데 정렬) */
+}
+/* #wrap{ 방법1
+overflow: hidden;/* wrap영역에 벗어나는 부분을 히든으로 감추겟다  footer부분이 아래로ㅓ 내려감 */
+
+#aside{
+width: 350px;
+height: 1080px;
+float: left;
+}
+#section{
+width: 930px;
+height: 1080px;
+float: left;}
+
+#footer{
+	clear: both;
+}
+</style>
+
+</head>
+<body>
+
+	<div id="header">
+		<h1>Header</h1>
+	</div>
+	
+	<div id="navigation">
+		<h1>Navigation</h1>
+	</div>
+	
+	<div id="wrap">
+		<div id="aside">
+			<h1>Aside</h1>
+			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+		</div>
+		<div id="section">
+			<h1>Section</h1>
+			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+		</div>
+	</div>
+	
+	<div id="footer">
+		<h1>Footer</h1>
+	</div>
+	
+</body>
+</html>

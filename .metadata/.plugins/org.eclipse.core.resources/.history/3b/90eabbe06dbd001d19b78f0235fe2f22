@@ -1,0 +1,23 @@
+@charset "UTF-8";
+#dog{border: 6px solid;
+	 display: flex;
+	 padding: 6px;
+	 
+	 margin: 20px;
+}
+#dog1{border-style: dotted;
+		padding: 15px;	
+}
+#dog2{border-style: dotted;
+		padding: 15px;	
+}
+#dog3{border-style: dotted;
+		padding: 15px;		
+}
+#header{
+    
+}
+#tex{
+	text-align: left;
+	float: left;
+}

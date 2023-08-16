@@ -1,0 +1,5 @@
+function externalFileFunction(){}
+
+var externalFileFunction = 'Hello World!!!'
+
+alert('Improt External Script, Complete!!!!');

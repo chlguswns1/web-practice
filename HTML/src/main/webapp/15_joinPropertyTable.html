@@ -1,0 +1,82 @@
+<!-- *84p
+	colspan="2" 열 합치기 : 몇개의 열을 합칠거냐 - 합쳐진 열을 삭제 cols열
+	rowspan="2" 행 합치기 : 몇개의 행을 합칠거냐 - 합쳐진 행을 삭제 rows열 
+ -->
+<!DOCTYPE html> 
+<html>
+<head>
+<meta charset="UTF-8">
+<title align = "center">테이블 셀 합치기</title>
+</head>
+<body>
+<h2 align = "center">기본</h2>
+	<table border="1"
+	align = "center">
+	<tr>
+		<td>1행1열</td>
+		<td>1행2열</td>
+	</tr>
+	 
+	<tr>
+		<td>2행1열</td>
+		<td>2행2열</td>
+	</tr>
+	</table>	
+	
+<hr width = "20%">
+
+	<h2 align = "center">열 합치지</h2>
+	<table border="1"
+	align = "center"
+	align = "center">
+	<tr align="center">
+		<td colspan="2">1행1열</td>
+		<!-- <td>1행2열</td> -->
+	</tr>
+	 
+	<tr>
+		<td>2행1열</td>
+		<td>2행2열</td>
+	</tr>
+	</table>	
+<hr width = "20%">	
+	<h2 align = "center">행 합치지</h2>
+	<table border="1"
+	align = "center">
+	<tr>
+		<td rowspan="2">1행1열</td>
+		<td>1행2열</td>
+	</tr>
+	<tr>
+		<!-- <td>2행1열</td> -->
+		<td>2행2열</td>
+	</tr>
+	</table>	
+<hr width = "20%">	
+	<h2 align = "center">응용</h2>
+	<table border="1" 
+			width = "150"
+			height = "150"
+			align = "center"
+			>
+		<tr align = "center">
+		<td td colspan="2">1</td>
+		<!-- <td>2</td> -->
+		<td td rowspan="3">3</td>
+		</tr>
+		<tr align = "center">
+		<td td rowspan="2">4</td>
+		<td>5</td>
+		<!-- <td>6</td> -->
+		</tr>	
+		<tr align = "center">
+		<!-- <td>7</td> -->
+		<td>8</td>
+		<!-- <td>9</td> -->
+		</tr>		
+	</table>
+	
+
+	
+</body>
+</html>

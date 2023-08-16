@@ -1,0 +1,222 @@
+<!-- 자바 스트립트 기본문법= 출력 ,문자열 자료형-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript 기본문법</title>
+<script type="text/javascript">
+/* 1.출력 */
+	/* alert("hello, JavaScript World..."); */
+	//alert("hello, JavaScript World...")//;가 있어도되고 없어도 된다 하지만 ;을 안붙엿다하면 처음부터끝까지 통일성을 갖자
+
+/* 2.문자열 자료형  */
+	//alert("Hello JavaScript _1111111");//문자열에 대한 자료형은 "" '' 구분하지 않아도 된다
+	
+	//alert('Hello "JavaScript_2"');//이러한 방법으로 "''" 감싸서 " '를 문자열로 출력할수 있다
+	//alert("Hello 'JavaScript_3'");
+	
+/* 이스케이스 시퀀스 문자 */
+	// \" : 큰 따옴표 출력
+	// \' : 작은 따옴표 출력
+	// \t :	수평 탭(tab)
+	// \n :	줄바꿈
+	// \\ : \
+	
+	//alert("안녕 \\자바스크립\트야");
+	
+/* 3.숫자 자료형 */	
+	//alert(273); alert(25.54);
+	
+/* 4. 변수: 자바스크립트에 변수는 var 하나뿐이다 */	
+	/* var radius = 10;//정수
+	alert(radius);//변수 화면에 표출 
+	
+	 var pi = 3.14;//실수
+	alert(pi);  */
+	
+	/* var varChar = 'A';//문자,문자열 구분은 없다 
+	alert(varChar);
+	
+	varChar = 'Friend'; //문자열
+	alert(varChar); */
+	
+	/* var booleanType = true; //True(X)대소문자를 구분한다 ,false
+	alert(booleanType); */
+	
+	//var string = "Hello World...";//문자열 문자 문자열 큰의미는 없다 
+	//alert(string);
+	
+	//alert(2 * pi * radius);//실수는 오차가 발생하므로 자바스크립트도 똑같다
+	
+	// - 자바스크립트 자료형: 변수에 담아서 함수로 관리할수 있다
+/* 	var  func = function(){};//함수
+	var objectVar = {};//객체 생성 기호 - 참조변수의 의미로 생각하자 
+	 */
+	
+/*5. 변수의 특징 - 값을 재활용이 가능하다 */
+ 	/* var cup = 'coffee';
+	
+	cup ='Green tea';
+	cup = 'Milk';
+	alert('Drink : ' + cup + '!!!'); */ //자바syso에서 제공된 기능이 jsp에도 동일하게 적용되는구나 라는걸느끼자
+	
+	/* var number = 10;
+	alert('숫자 값 : ' + number) */
+	
+/* 6. 자료형 검사 */
+ 	/* //-문자열
+ 	alert(typeof('홍길동'));//string
+ 	
+ 	//-숫자
+ 	alert(typeof(150));//number
+ 	alert(typeof(45.54));//number
+ 	
+ 	//-boolean
+ 	alert(typeof(true));//boolean
+ 	
+ 	//-함수
+ 	alert(typeof(function() {}));//function
+ 	
+ 	//-객체
+ 	alert(typeof({}));//object
+ 	 
+ 	 //-undefined
+ 	alert(typeof(number));//undefined-자료형이 선언되어있지않아서
+ 	*/
+ 	
+/* 7. 입력 */
+	//var name = prompt('이름을 입력하세여','두글자 이상 입력'); //입력창이뜬다 그값을 반환해서 사용하려면 변수에 넣어둔다
+ 	//alert(name + '님 반갑습니다');
+	
+	//-boolean 입력 받을 때 사용하는 함수
+	/* var bool = confirm('수락하시겠습니까?????????');
+	
+	if(bool){
+		alert('수락 하셧습니다');
+	}else{
+		alert('거절하셨군요');
+	} */
+ 	
+/* 8. 숫자와 문자열 자료형변환 */
+ 	//1. + 연산자 
+ 	/* alert(52+273);//325
+ 	alert('52'+'273');//52273
+ 	alert('52'+273);//52273
+ 	alert(52+'273');//52273 */
+ 
+ 	//2.덧셈을 제외한 사칙연산
+ 	/* alert('52'*2);//104
+ 	alert('52'-2);//50
+ 	alert('52'/2);//26
+ 	alert('52'%2);//0 
+ 
+ 	alert('홍길동'-2);//NaN(not a Number) 숫자가 아니에요
+ 	*/
+ 	//3. 강제 자료형변환
+ 	//	-다른 자료형 ->숫자변환:Number()함수 사용.
+ 	// 	-다른 자료형 ->문자열 변환 : String()함수 사용.
+ 	
+ 	/* var input = prompt('숫자를 입력하세요','숫자');//prompt무조건 값을 문자열형태로 리턴해준다
+ 	alert(typeof(input));
+ 	
+ 	var num = Number(input);
+ 	alert(typeof(num)+':'+num);
+ 	
+ 	var num = Number(prompt('숫자를 입력하세여','숫자'));
+ 	alert(typeof(num)+':'+num);
+ 	 */
+ 	//-숫자가 아닌 값 입력시
+ 	//.Nan 출력
+ 	//.자바 스크립트로 나타낼수 없는 숫자 의미
+ 	
+ 	/* //4. Boolean() 자료형 변환 false
+ 	alert(Boolean(0));		//false
+ 	alert(Boolean(NaN));	//false
+ 	alert(Boolean(''));		//false
+ 	alert(Boolean(null));	//false
+ 	alert(Boolean(undefined));//false
+ 	
+ 	//-단 주의사항 - ''만 추가되었는데 왜 결과가 차이가나나 0이외의 값은 트루값을 가진다
+ 	alert(Boolean('0'));//true
+ 	alert(Boolean('False'));//true
+ 	 */
+ 	 
+ /* 9. undifined 자료형 */
+ 	//1.존재하지 않는 것을 표현하는 자료형
+ 	//alert(typeof(variable));
+ 	
+ 	//2.변수를 선언했지만 , 초기화를 하지않았을때
+    //var variable2;
+ 	//alert(typeof(variable2));
+ 
+/* 10.산술 연산자 + - * / % 
+ 	alert(27 + 35);
+	alert(27 - 35);
+	alert(27 * 35);
+	alert(27 / 35);//cf)java
+	alert(6 / 3);
+	alert(27 % 35);*/
+	
+/* 11. 비교 연산자 <, >, <=, >=, ==, !=
+	alert(25 < 35);
+ 	*/
+ 	
+/* 12. 논리 연산자: &&, ||, ! */
+ 	//alert(52>135 && 45<78);
+ 	
+/* 13.복합대입 연산자 : +=, -=, *=, /=, %= 
+	 var value = 50;
+ 	 value += 10;
+	 alert(value);
+	
+ 	var value = 20;
+	value -= "world";
+	alert(value);//NaN
+	 */
+	 
+/* 14. 증감 연산자 
+ 	var number = 10;
+	
+	 alert(number++);
+	 alert(++number);
+	 alert(number--);
+	 alert(--number);
+	 */
+	 
+/* 15. 일치 연산자 */
+  	/* alert('' == false);//true
+	alert('' == 0);	//true
+	alert(false == 0); //true
+	alert(273 == 273); //true */
+	 
+	
+	// === : 양변의 자료형과 값이 일치
+	// !== : 양변의 자료형과 값이 다름 
+ 	/* alert('' === false);//fales
+	alert('' === 0);	//fales
+	alert(false === 0); //fales
+	alert(273 === 273); //fales */
+ 
+ /* 16. 배열 */ //-연속된 동일한 자료형을 저장할 목적으로 만든 연속된 메모리 할당
+ 	var array = [273,'string',true,function(){},{},[150,170]];//이모든데이터를 하나의 변수이름으로 관리하겠다
+	alert(array[0]);
+	alert(array[1]);
+	alert(array[2]);
+	alert(array[3]);
+	alert(array[4]);
+	alert(array[5]);
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+</script>
+</head>
+<body>
+
+</body>
+</html>

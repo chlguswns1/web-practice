@@ -1,0 +1,34 @@
+﻿<!-- 같은 동위관계 인데도 인접과 형제로 나뉜다
+	
+ -->
+<!DOCTYPE html> 
+<html>
+<head>
+<meta charset="UTF-8">
+<title>인접(adjacent) & 형제(sibling) 선택자</title>
+
+<style type="text/css">
+	/* 인접(adjacent) 선택자 + 기호사용 h1에 바로 인접한 h2가 지정
+	   -h1태그의 바로뒤에 위치하는 h2태그의 color 속성에
+	   red 키워드를 적용한다.
+	 */
+	h1 + h2 {color: red;}
+	
+	
+	/* 형제(sibling) 선택자  ~기호를 사용 h1 에서 가장 가까운 h2모두 지정
+	-h1태그의 뒤에 위치하는 h2태그의 background 속성에
+	   blue 키워드를 적용한다.
+	*/
+	h1 ~ h2 {background: blue;}
+</style>
+
+
+</head>
+<body>
+	<h1>Header - 1</h1>
+	<h2>Header - 2</h2>
+	<h2>Header - 2</h2>
+	<h2>Header - 2</h2>
+	<h3>Header - 3</h3>
+</body>
+</html>

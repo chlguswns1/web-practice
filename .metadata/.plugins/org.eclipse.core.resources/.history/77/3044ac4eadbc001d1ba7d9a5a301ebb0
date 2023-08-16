@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>브라우저 객체 모델</title>
+<script type="text/javascript">
+// * 브라우저 객체 모델(BOM:Browser Object Model)
+//  - 웹브라우저와 관련된 객체의 집합을 의미.
+//  - window, screen, location, navigator, history, document 객체가 있다.
+
+/* 1. window 객체 */ //브라우저를 관리하는 최상위 부모객체
+// - 브라우저 기반 자바스크립트의 최상위 객체. 
+// - alert(), prompt() 함수 모두 window 객체의 메서드.
+	
+	//. window 객체의 원도우 생성 메소드 - 브라우저 창을 뛰울때
+	//window.open('https://www.naver.com','child','width=1024,height=1200');
+
+/* 	var output ='';//window객체보기
+	for(var key in window){
+		output += '* '+key+ ' : ' +window[key]+'\n';
+	}
+	alert(output);
+	 */
+	//===========================
+		
+		var child = window.open('','','width=1024,height=1200,menubar=,status=,toolbar=');
+/* 2. screen 객체 */
+// - 웹브라우저의 화면이 아니라 운영체제 화면의 속성을 가지는 객체.
+
+
+
+/* 3. location 객체  */
+// - 브라우저의 주소 표시줄과 관련된 객체.
+// - 프로토콜의 종류, 호스트 이름, 문서 위치등의 정보를 가짐.
+// - 페이지를 이동할 때 많이 사용.
+	
+
+
+/* 4. navigator 객체 
+// - 웹페이지를 실행하고 있는 브라우저에 대한 정보를 가짐.
+	var output = '';
+	for(var key in navigator){
+		output += '※ '+key+':'+navigator[key]+'\n';
+	}
+	
+	alert(output);
+*/ 
+
+/* 5. window 객체의 onload 이벤트 속성 */
+// - window 객체가 로드가 완료되고 자동으로 할당된 함수를 실행.
+
+
+</script>
+</head>
+<body>
+
+	<h1>Hello Window...!!!</h1>
+	<h1>Hello Window...!!!</h1>
+	
+</body>
+</html>

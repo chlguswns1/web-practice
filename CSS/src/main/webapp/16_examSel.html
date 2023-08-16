@@ -1,0 +1,52 @@
+﻿<!-- 속성선택자 + 상태선택자 + 동위선택자의 복합 활용 예제 --> 
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>복합 활용 예제</title>
+
+<style type="text/css">
+
+	input[type = checkbox]:checked + div{height: 0px;}/* 체크하는순간 높이가0이되어 사라진다 */
+
+	div{
+		width: 650;
+		height: 300px;
+		background: silver;
+		overflow: hidden;
+		
+		/* 변환 효과를 적용합니다 */
+		-webkit-transition-duration:2s;
+		-ms-transition-duration:2s;
+		-moz-transition-duration:2s;
+		-o-transition-duration:2s;
+		transition-duration:2s;/* 동작의 시간을2초동안행하라 */
+	}
+</style>
+
+</head>
+<body>
+	<input type="checkbox" />
+	<div>
+		<h1>Lerem ipsum</h1>
+		<p>Lorem Ipsum is simply dummy text of the printing and
+			typesetting industry. Lorem Ipsum has been the industry's standard
+			dummy text ever since the 1500s, when an unknown printer took a
+			galley of type and scrambled it to make a type specimen book. It has
+			survived not only five centuries, but also the leap into electronic
+			typesetting, remaining essentially unchanged. It was popularised in
+			the 1960s with the release of Letraset sheets containing Lorem Ipsum
+			passages, and more recently with desktop publishing software like
+			Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is
+			simply dummy text of the printing and typesetting industry. Lorem
+			Ipsum has been the industry's standard dummy text ever since the
+			1500s, when an unknown printer took a galley of type and scrambled it
+			to make a type specimen book. It has survived not only five
+			centuries, but also the leap into electronic typesetting, remaining
+			essentially unchanged. It was popularised in the 1960s with the
+			release of Letraset sheets containing Lorem Ipsum passages, and more
+			recently with desktop publishing software like Aldus PageMaker
+			including versions of Lorem Ipsum.</p>
+	</div>
+</body>
+</html>

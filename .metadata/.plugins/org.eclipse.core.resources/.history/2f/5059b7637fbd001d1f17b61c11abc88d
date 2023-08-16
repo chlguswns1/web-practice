@@ -1,0 +1,67 @@
+<!--
+* JavaScript에서의 예외 처리
+	- 정의:프로그램이 실행되는 동안 문제가 발생하면 프로그램이 자동으로 
+			중단된다. 이럴 때 프로그램이 대처할 수 있게 처리하는 것.
+		cf) error: 프로그래밍 언어의 문법적인 오류
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>예외처리</title>
+<script type="text/javascript">
+  
+/* 1. 기본 예외 처리 
+
+	function whenClick(e) {
+		var event = e || widow.event;
+		
+		var willAlert = '';
+		willAlert += 'clientX: ' + event.clientX+'\n';
+		willAlert += 'clientY: ' + event.clientY+'\n';
+		alert(willAlert);
+	}
+*/
+/* 2. 고급 예외 처리 
+// 예제1. // 자바와 비슷 
+	try {
+			willExcept.byebye();
+	} catch (exception) {//필수
+		alert('예외가 발생')
+	}finally{//옵션
+		alert('예외처리 수행끝');
+	}
+*/
+// 예제2:예외 객체
+//    - IE에서 확인.
+//    - 예외 객체 속성
+//        . message : 예외메세지
+//        . description : 예외 설명
+//        . name : 예외 이름
+	try {
+		//배열의 최대크기를 4,29,967,295 크기만큼으로 제공을 하고있다
+		
+			var array = new Array(99999999999);
+	} catch (exception) {//필수
+		var output = '';
+		for(var i in exception){
+			output += i +':'+exception[i] +'\n';
+		}
+		alert('예외가 발생')
+	}finally{//옵션
+		alert('예외처리 수행끝');
+	}
+  
+// 예제3: 예외 강제 발생
+
+
+</script>
+  
+</head>
+<body>
+
+	<h1 onclick="whenClick(event)">Click</h1>
+	
+</body>
+</html>

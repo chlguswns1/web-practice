@@ -1,0 +1,29 @@
+@charset "UTF-8";
+#dog{border: 6px solid;
+	 display: flex;
+	 padding: 6px;
+	 flex: 1;
+	 margin: 20px;
+}
+#dog1{border-style: dotted 15px;;
+		
+		
+}
+#dog2{border-style: dotted;
+		padding: 15px;
+		border: 15px;
+}
+#dog3{border-style: dotted;
+		padding: 15px;
+		border: 15px;
+}
+header{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 4rem;
+    background: lightgray;
+    line-height: 4rem;
+    text-align: center;
+}

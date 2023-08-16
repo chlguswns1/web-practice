@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>간단한 회원정보 양식</title>
+<link rel="stylesheet" type="text/css" href="./quiz.css">
+<script type="text/javascript">
+function show() {
+	var form = document.myform; //입력양식을 가져옴.
+	var id = form["id"].value;
+	//name="id"와 일치하는 입력양식에 입력된 텍스트를 가져온다
+	var name = form["name"].value;
+	var gender = form["gender"].value;
+	var cell = form["tel1"].value + form["tel2"].value + form["tel3"].value;
+	var address = form["address"].value;
+	var hobby = "";
+	for (var i = 1; i <= 4; i++) {
+		if (form["hobby"+i].checked)
+			hobby += form["hobby"+i].value + " ";
+	}
+	var str = id + "\n" + name + "\n" + gender + "\n";
+	str+= cell + "\n" + address + "\n" + hobby;
+	alert(str);//브라우저 상단에 알림
+}
+</script>
+</head>
+<body>
+<form method="post" name="ex">
+		<h2>간단한 회원정보 양식</h2>
+		<table border="1">
+			<tr>
+				<td><label>이름</label></td>
+				<td><input type="text"  id="id"></td>
+			</tr>
+			<tr>
+				<td><label>암호</label></td>
+				<td><input type="password" id="pass"></td>
+			</tr>
+			<tr>
+				<td><label>전화번호</label></td>
+				<td id="tell">
+				<input type="text" name="tel1" size="4" maxlength="3" />
+				-
+				<input type="text" name="tel2" size="4" maxlength="4" />
+				-
+				<input type="text" name="tel3" size="4" maxlength="4" />
+				</td>
+			</tr>
+			
+		<tr>
+			<td>직장</td>
+			<td>
+			<select id="job">
+    			<option value="">직업선택</option>
+    			<option value="학생">학생</option>
+    			<option value="직장">직장</option>
+    			<option value="기타">주부</option>
+			</select>
+		</td>	
+		</tr>
+		
+		<tr>
+			<td>성별</td> 
+			<td id="gen">
+				<input type="radio" name="gender" value="male" checked />남
+				<input type="radio" name="gender" value="female" />여</td>
+			</td>
+		</tr>
+		<tr>
+		<td>취미</td>
+			<td id="hab">
+		 		<input type="checkbox"/>바둑 
+		  		<input type="checkbox"/>낙시
+		   		<input type="checkbox"/>게임
+		    	<input type="checkbox"/>독서
+		 	</td>
+		 </tr>
+		
+		<tr>
+			<td >자기소개 하는글</td>
+			<td><textarea rows="intro" cols="60" rows="5" id="text">자기소개하는글</textarea></td>
+		</tr>
+		<tr id="go">
+			<td colspan="2" align="center">
+          	 <input type="button" value="등록하기" onclick="show();">
+            <input type="button" value="취소하기" onclick="show1();">
+     		</td>
+		</tr>
+	</table>
+	</form>
+</body>
+</html>

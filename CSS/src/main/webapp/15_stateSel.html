@@ -1,0 +1,35 @@
+﻿<!--
+	* 상태선택자
+		- 입력 양식의 상태를 선택할 때 사용하는 선택자.
+		- 종류
+			. :enabled
+			. :disabled
+			. :focus 클릭시(포커스를 두는순간) 속성적용 
+			. :checked
+ -->
+ 
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>상태선택자</title>
+
+<style type="text/css">
+	input:enabled {background:yellow;}
+	input:disabled {background:green;}
+	input:focus{background:blue;}
+	input:checked{background:gray;}
+
+</style>
+
+</head>
+<body>
+
+     <h2>Enabled</h2>
+     <input />
+     
+     <h2>Disabled</h2>
+     <input disabled/><!-- 보여지기는 하지만 비활성화 된다 -->
+
+</body>
+</html>

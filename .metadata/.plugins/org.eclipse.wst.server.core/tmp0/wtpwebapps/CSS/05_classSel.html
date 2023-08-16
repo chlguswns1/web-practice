@@ -1,0 +1,51 @@
+<!-- class로 중복설정한 애들은 .이름으로 접근한다
+	class 안에는 두개이상의 이름을 가질수 있고 ,를 쓰지않고 띄어서 옆에쓴다
+	*클래스 선택자 
+	-특정한 클래스를 가지고 있는 태그를 선택할 때 사용하는 선택자
+	-웹 페이지를 개발할때 가장 많이 사용하는 선택자
+	-여러개의 클래스 선택자 사용
+	.class속성은 공백으로 구분해서 여러 클래스를 사용할수 있다.
+	id 속성은 웹페이지 내부에서 중복되지 않으므로 상관없지만 
+	class 속성은 중복될수 있다
+	-class속성은 서로다른 태그에 적용된다면, 태그 선택자와 클래스 선택자를
+	함께 사용해 더 정확하게 태그를 선택할수 있다 
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>클래스 선택자 </title>
+
+<style type="text/css">
+	.select{color: red; }
+	.item{background: green;}
+	li.select{color: green;} /* 이와같이 li안에있는 select만 선택하겟다고 지정할수 있다 */
+</style>
+</head>
+<body>
+		
+	<h2>웹프로그래밍</h2>
+	<ul>
+  		<li class="select"> html </li>
+  		<li class="select"> css </li>
+  		<li>javaScript</li>
+  		<li>jQury</li>
+	</ul>
+	
+	<hr>
+	
+	<h2 class="select item" >화면 구현</h2>
+	
+	<hr>
+	
+	<h2>웹프로그래밍</h2>
+	<ul>
+  		<li> html </li>
+  		<li> css </li>
+  		<li>javaScript</li>
+  		<li>jQury</li>
+	</ul>
+
+		
+</body>
+</html>

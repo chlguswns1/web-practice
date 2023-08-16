@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;jQury&apos; to &apos;jQuery&apos;" description="Rename resource &apos;jQury&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/jQury" name="jQuery" stamp="1678262385261" updateReferences="true"/>
+</session>

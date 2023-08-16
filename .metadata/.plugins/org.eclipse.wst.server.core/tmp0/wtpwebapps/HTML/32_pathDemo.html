@@ -1,0 +1,33 @@
+<!-- 
+	절대경로:c드라이부터 위치를 지정하는 방식
+	상대경로:별도의 디렉토리를 지정하지않으면 현재내 프로그램의 위치부터 인식하는방식
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>경로(절대/상대) 데모 메인</title>
+</head>
+<body>
+	<!-- 절대경로의 의미를 가진다 -->
+	<h1>메인</h1>
+	<h3>절대경로</h3>
+	<a href="https://www.naver.com">네이버</a>
+	<hr>
+	
+	<!-- 상대경로 자바와의 의미가 유사하다
+		현재의 내파일 안에서의 파일을 찾아간다
+		현재의 내위치라는 표시로 ./를 사용한다
+		상대경로의 디폴트위치는 내파일이 기준위치가 된다	
+	 -->
+	<h3>상대 경로</h3>
+	<a href="32_A.html">같은 경로의 32_A.html으로 이동</a><br>  
+	<a href="./32_A.html">같은 경로의 32_A.html으로 이동</a><br>
+	<a href="./32_sub/B.html">32_sub같은 경로의 32_B.html으로 이동</a><br>
+	<a href="./subsub/c.html">32_sub/subsub/폴더 경로의 c.html으로 이동</a><br>
+	
+	
+	
+</body>
+</html>
